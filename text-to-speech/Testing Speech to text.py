@@ -14,7 +14,7 @@ AudioSegment.converter = which("ffmpeg")
 
 
 class Speech_analyser:
-    audio_files_location = 'D:\Semicolons2020\speech-analyser\\recordings\\'
+    audio_files_location = 'D:\\Semicolons2020\\speech-analyser\\recordings\\'
     input_audio_filename = ''
     processed_audio_filename = ''
     speech_to_text_result = ''
@@ -26,7 +26,6 @@ class Speech_analyser:
         src = self.input_audio_filename
         dest = self.input_audio_filename.split('.')[0] + 'wav'
         try:
-            print(str(path.join(self.audio_files_location, src)))
             sound = AudioSegment.from_file(path.join(self.audio_files_location, src), format='mp4')
             sound.export(path.join(self.audio_files_location, dest), format='wav')
             self.processed_audio_filename = dest
@@ -93,7 +92,7 @@ class Speech_analyser:
 
 analyser = Speech_analyser()  # initialize analyser object
 
-analyser.set_input_file_name('Recording1.m4a')  # set file name to be processed
+analyser.set_input_file_name('Recording.m4a')  # set file name to be processed
 
 analyser.analyse_audio_file()  # analyse audio function
 
